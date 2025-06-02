@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "IvtB8ZZy6q085rg00kcB2aeJp2so275JR+ena8Uk2xc=",
+  "Source": "ResumeScanner.API",
+  "BasePath": "_content/ResumeScanner.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
