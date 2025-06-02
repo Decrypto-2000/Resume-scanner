@@ -1,0 +1,42 @@
+<div class="upload-container">
+  <h2>Upload Resume & Job Description</h2>
+
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="resumeFile">Resume File:</label>
+      <input type="file" id="resumeFile" (change)="onFileChange($event)" accept=".pdf,.doc,.docx" />
+    </div>
+
+    <div>
+      <label for="jobDesc">Job Description:</label>
+      <textarea
+        id="jobDesc"
+        rows="6"
+        formControlName="jobDescription"
+        placeholder="Paste job description here..."
+      ></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div *ngIf="result" class="result-container">
+  <h3>Extracted Skills:</h3>
+  <ul>
+    <li *ngFor="let skill of result.extractedSkills">{{ skill }}</li>
+  </ul>
+
+  <div class="score-section">
+    <p><strong>Candidate Fit % : &nbsp;</strong> {{ (result.matchScore * 100) | number: '1.0-0' }}%</p>
+
+    <!-- Optional: Visual representation -->
+    <div class="progress-bar-wrapper">
+      <div
+        class="progress-bar-fill"
+        [style.width.%]="result.matchScore * 100"
+      ></div>
+    </div>
+  </div>
+</div>
+
+</div>
